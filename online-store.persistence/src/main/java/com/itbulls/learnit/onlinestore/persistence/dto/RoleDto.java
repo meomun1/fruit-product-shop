@@ -2,8 +2,9 @@ package com.itbulls.learnit.onlinestore.persistence.dto;
 
 public class RoleDto {
 	
-	public static final String ADMIN_ROLE_NAME = "ADMIN";
-	public static final String CUSTOMER_ROLE_NAME = "CUSTOMER";
+	public static final String ADMIN_ROLE_NAME = "ROLE_ADMIN";
+	public static final String CUSTOMER_ROLE_NAME = "ROLE_CUSTOMER";
+	public static final String MANAGER_ROLE_NAME = "ROLE_MANAGER";
 
 	private Integer id;
 	private String roleName;

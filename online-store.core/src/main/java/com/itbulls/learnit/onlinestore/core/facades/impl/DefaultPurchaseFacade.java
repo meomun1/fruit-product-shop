@@ -41,6 +41,7 @@ public class DefaultPurchaseFacade implements PurchaseFacade{
         purchase.setCustomer(attribute);
         purchase.setProducts(new ArrayList<>(Arrays.asList(product)));
         var purchaseStatus = new DefaultPurchaseStatus();
+        purchaseStatus.setId(1); 
         purchase.setPurchaseStatus(purchaseStatus);
 
         purchaseDao.savePurchase(purchaseConverter.convertPurchaseToPurchaseDto(purchase));

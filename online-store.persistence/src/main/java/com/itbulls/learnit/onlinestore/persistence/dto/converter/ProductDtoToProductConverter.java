@@ -40,6 +40,7 @@ public class ProductDtoToProductConverter {
 				product.setCategoryName(productDto.getCategoryDto().getCategoryName());
 			product.setImgName(productDto.getImgName());
 			product.setDescription(productDto.getDescription());
+			product.setProductType(productDto.getProductType());
 		}
 		
 		return product;

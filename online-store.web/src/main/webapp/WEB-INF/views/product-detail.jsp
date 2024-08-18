@@ -72,9 +72,9 @@
                     <a
                       style="font-size: 20px"
                       >Welcome
-                      <c:if test="${loggedInUser != null}"
-                        >${sessionScope.loggedInUser.getLastName()}</c:if
-                      >
+                      <c:if test="${loggedInUser != null}">
+                        ${sessionScope.loggedInUser.getLastName()}
+                      </c:if>
                     </a>
                   </li>
 
@@ -114,11 +114,16 @@
                     <h1>${product.productName}</h1>
                     <p class="price">${product.price}</p>
 
-                    <button id="buy-button" class="buy-button">
-                        Buy
-                    </button>
+                    <c:if test="${loggedInUser != null}">
+                        <a href="checkout?productId=${product.getId()}" >Buy hehe</a>
+                    </c:if>
+
+                    <c:if test="${loggedInUser == null}">
+                        <a href="sign-in">Buy hehe</a>
+                    </c:if>
+
                     <div class="description">
-                        <p>This is a good product</p>
+                        <p>This is a good product, yes sir</p>
                     </div>
                 </div>
             </c:if>

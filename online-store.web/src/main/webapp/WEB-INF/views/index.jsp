@@ -158,7 +158,7 @@ prefix="fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
           <p>We have everything for you.</p>
           <form
             action="search-product-page"
-            method="post"
+            method="GET"
             style="
               display: flex;
               justify-content: center;
@@ -336,189 +336,41 @@ prefix="fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
     <!--welcome-hero end -->
 
     <!--featured-cars start -->
-    <section id="featured-cars" class="featured-cars">
-          <div class="container">
-            <div class="section-header">
-              <p>checkout <span>the</span> featured fruits</p>
-              <h2>featured Fruits</h2>
-            </div>
-            <!--/.section-header-->
-            <div class="featured-cars-content">
-              <div class="row">
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                  <div class="single-featured-cars">
-                    <div class="featured-img-box">
-                      <div class="featured-cars-img">
-                        <img src="images/featured-cars/banana.png" alt="cars" />
-                      </div>
-                      <div class="featured-model-info">
-                        <p>
-                          model: ****
-                          <span class="featured-mi-span"> Price: </span>
-                          <span class="featured-hp-span"> 5$/kg</span>
-                        </p>
-                      </div>
-                    </div>
-                    <div class="featured-cars-txt">
-                      <h2><a href="#">Banana fruit model</a></h2>
-
-                    </div>
-                  </div>
+ <section id="featured-fruits" class="featured-fruits">
+  <div class="container">
+    <div class="section-header">
+      <p>checkout <span>the</span> featured fruits</p>
+      <h2>featured Fruits</h2>
+    </div>
+    <!--/.section-header-->
+    <div class="featured-fruits-content">
+      <div class="row">
+        <c:forEach var="category" items="${categories}">
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="single-featured-fruits">
+              <div class="featured-img-box">
+                <div class="featured-fruits-img">
+                  <img src="images/featured-fruits/${category.imgName}" alt="fruits" />
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                  <div class="single-featured-cars">
-                    <div class="featured-img-box">
-                      <div class="featured-cars-img">
-                        <img src="images/featured-cars/apple.png" alt="cars" />
-                      </div>
-                      <div class="featured-model-info">
-                        <p>
-                          model: ****
-                          <span class="featured-mi-span"> Price: </span>
-                          <span class="featured-hp-span"> 5$/kg</span>
-                        </p>
-                      </div>
-                    </div>
-                    <div class="featured-cars-txt">
-                      <h2>
-                        <a href="#">Apple fruit model</a>
-                      </h2>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                  <div class="single-featured-cars">
-                    <div class="featured-img-box">
-                      <div class="featured-cars-img">
-                        <img src="images/featured-cars/coconut.png" alt="cars" />
-                      </div>
-                      <div class="featured-model-info">
-                        <p>
-                          model: ****
-                          <span class="featured-mi-span"> Price: </span>
-                          <span class="featured-hp-span"> 5$/kg</span>
-                        </p>
-                      </div>
-                    </div>
-                    <div class="featured-cars-txt">
-                      <h2>
-                        <a href="#">Coconut fruit model</a>
-                      </h2>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                  <div class="single-featured-cars">
-                    <div class="featured-img-box">
-                      <div class="featured-cars-img">
-                        <img src="images/featured-cars/lemon.png" alt="cars" />
-                      </div>
-                      <div class="featured-model-info">
-                        <p>
-                          model: ****
-                          <span class="featured-mi-span"> Price: </span>
-                          <span class="featured-hp-span"> 5$/kg</span>
-                        </p>
-                      </div>
-                    </div>
-                    <div class="featured-cars-txt">
-                      <h2>
-                        <a href="#">Lemon fruit model</a>
-                      </h2>
-                    </div>
-                  </div>
+                <div class="featured-model-info">
+                  <p>
+                    model: ${category.id}
+                    <span class="featured-mi-span"> Price: </span>
+                    <span class="featured-hp-span"> 5$/kg</span>
+                  </p>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                  <div class="single-featured-cars">
-                    <div class="featured-img-box">
-                      <div class="featured-cars-img">
-                        <img src="images/featured-cars/mango.png" alt="cars" />
-                      </div>
-                      <div class="featured-model-info">
-                        <p>
-                          model: ****
-                          <span class="featured-mi-span"> Price: </span>
-                          <span class="featured-hp-span"> 5$/kg</span>
-                        </p>
-                      </div>
-                    </div>
-                    <div class="featured-cars-txt">
-                      <h2>
-                        <a href="#">Mango fruit model</a>
-                      </h2>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                  <div class="single-featured-cars">
-                    <div class="featured-img-box">
-                      <div class="featured-cars-img">
-                        <img src="images/featured-cars/melon.png" alt="cars" />
-                      </div>
-                      <div class="featured-model-info">
-                        <p>
-                          model: ****
-                          <span class="featured-mi-span"> Price: </span>
-                          <span class="featured-hp-span"> 5$/kg</span>
-                        </p>
-                      </div>
-                    </div>
-                    <div class="featured-cars-txt">
-                      <h2>
-                        <a href="#">Melon fruit model</a>
-                      </h2>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                  <div class="single-featured-cars">
-                    <div class="featured-img-box">
-                      <div class="featured-cars-img">
-                        <img src="images/featured-cars/start_fruit.png" alt="cars" />
-                      </div>
-                      <div class="featured-model-info">
-                        <p>
-                          model: ****
-                          <span class="featured-mi-span"> Price: </span>
-                          <span class="featured-hp-span"> 5$/kg</span>
-                        </p>
-                      </div>
-                    </div>
-                    <div class="featured-cars-txt">
-                      <h2>
-                        <a href="#">Start fruit model</a>
-                      </h2>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                  <div class="single-featured-cars">
-                    <div class="featured-img-box">
-                      <div class="featured-cars-img">
-                        <img src="images/featured-cars/strawberry.png" alt="cars" />
-                      </div>
-                      <div class="featured-model-info">
-                        <p>
-                          model: ****
-                          <span class="featured-mi-span"> Price: </span>
-                          <span class="featured-hp-span"> 5$/kg</span>
-                        </p>
-                      </div>
-                    </div>
-                    <div class="featured-cars-txt">
-                      <h2>
-                        <a href="#">Strawberry fruit model</a>
-                      </h2>
-                    </div>
-                  </div>
-                </div>
+              <div class="featured-fruits-txt">
+                <h2><a href="#">${category.categoryName} fruit model</a></h2>
               </div>
             </div>
           </div>
-          <!--/.container-->
-    </section>
+        </c:forEach>
+      </div>
+    </div>
+  </div>
+  <!--/.container-->
+</section>
     <!--/.featured-cars-->
     <!--featured-cars end -->
 

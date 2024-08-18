@@ -29,7 +29,7 @@ public class ProductPageFruitShop extends HttpServlet{
         if (idParam != null && !idParam.isEmpty()) {
             int id = Integer.parseInt(idParam);
             request.setAttribute("product", productFacade.getProductById(id));
-            request.getRequestDispatcher("/WEB-INF/views/product-detail.jsp").forward(request, response);
+            request.getRequestDispatcher(Configurations.VIEWS_PATH_RESOLVER+"product-detail.jsp").forward(request, response);
         } else {
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Product id is required");
         }

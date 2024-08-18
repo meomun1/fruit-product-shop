@@ -1,4 +1,4 @@
-package com.itbulls.learnit.onlinestore.servlets.exceptions;
+package com.itbulls.learnit.onlinestore.controllers;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

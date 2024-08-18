@@ -20,8 +20,8 @@ public class SearchProductFruitShop extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String searchQuery = request.getParameter("searchQuery");
 
+		String searchQuery = request.getParameter("searchQuery");
 		String pageParam = request.getParameter("page");
 		Integer page = (pageParam != null && !pageParam.isEmpty()) ? Integer.valueOf(pageParam) : 1;
 		
@@ -29,24 +29,9 @@ public class SearchProductFruitShop extends HttpServlet {
 
 		request.setAttribute("searchQuery", searchQuery);
 		request.setAttribute("numberOfPages", numberOfPages);
+		request.setAttribute("activePage", page);
 		request.setAttribute("products", productFacade.getProductsLikeNameForPageWithLimit(searchQuery, page, Configurations.PAGINATION_LIMIT));
-		request.getRequestDispatcher("/WEB-INF/views/product-page.jsp").forward(request, response);
-	}
-
-	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
-		String searchQuery = request.getParameter("searchQuery");
-		String pageParam = request.getParameter("page");
-		Integer page = (pageParam != null && !pageParam.isEmpty()) ? Integer.valueOf(pageParam) : 1;
-
-		Integer numberOfPages = productFacade.getNumberOfPagesForSearch(searchQuery, Configurations.PAGINATION_LIMIT);
-
-		request.setAttribute("searchQuery", searchQuery);
-		request.setAttribute("numberOfPages", numberOfPages);
-		request.setAttribute("products", productFacade.getProductsLikeNameForPageWithLimit(searchQuery, page, Configurations.PAGINATION_LIMIT));
-		request.getRequestDispatcher("/WEB-INF/views/product-page.jsp").forward(request, response);
+		request.getRequestDispatcher(Configurations.VIEWS_PATH_RESOLVER+"product-page.jsp").forward(request, response);
 	}
 
 }

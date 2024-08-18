@@ -8,8 +8,6 @@ import com.itbulls.learnit.onlinestore.core.services.impl.PasswordValidator;
 import com.itbulls.learnit.onlinestore.persistence.enteties.User;
 import com.itbulls.learnit.onlinestore.persistence.enteties.impl.DefaultUser;
 import com.itbulls.learnit.onlinestore.filters.PartnerCodeFilter;
-
-import jakarta.annotation.Resource;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.Cookie;
@@ -50,29 +48,29 @@ public class SignUpFruitShop extends HttpServlet {
 		user.setLastName(request.getParameter("lastName"));
 		user.setEmail(request.getParameter("email"));
 		user.setPassword(request.getParameter("password"));
-
+		
 		// Validate email format
 		User existingUser = userFacade.getUserByEmail(user.getEmail());
 		if (existingUser != null) {
-			request.setAttribute("errorMessage", rb.getString("signup.err.msg.email.exists"));
+			request.getSession().setAttribute("errorMessage", rb.getString("signup.err.msg.email.exists"));
 			response.sendRedirect(baseURL + "/sign-up");
 			return;
 		}
-
+		
 		// Validate password confirmation
 		if (!user.getPassword().equals(request.getParameter("repeat_password"))) {
-			request.setAttribute("errorMessage", rb.getString("signup.err.msg.repeat.password"));
-			response.sendRedirect(baseURL + "/signup");
+			request.getSession().setAttribute("errorMessage", rb.getString("signup.err.msg.repeat.password"));
+			response.sendRedirect(baseURL + "/sign-up");
 			return;
 		}
-
+		
 		// Validate password format
 		if (!validator.isValidate(user.getPassword())) {
-			request.setAttribute("errorMessage", rb.getString("signup.err.msg.special.character"));
-			request.getRequestDispatcher("/WEB-INF/views/sign-up.jsp").forward(request, response);
+			request.getSession().setAttribute("errorMessage", rb.getString("signup.err.msg.special.character"));
+			response.sendRedirect(baseURL + "/sign-up");
 			return;
 		}
-
+		
 		String partnerCode = null;
 		if (request.getCookies() != null) {
 			for (Cookie cookie : request.getCookies()) {
@@ -81,7 +79,7 @@ public class SignUpFruitShop extends HttpServlet {
 				}
 			}
 		}
-
+		
 		userFacade.registerUser(user, partnerCode);
 		response.sendRedirect(baseURL + "/sign-in");
 

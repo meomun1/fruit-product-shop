@@ -15,9 +15,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Active Orders</title>
-    <link rel="stylesheet" href="css/order_page/order-page.css">
+    <title>Your Profile</title>
+    <link rel="stylesheet" href="css/my_profile/style.css">
+
     <shop:indexcss />
+
 </head>
 <body>
 
@@ -104,46 +106,48 @@
     </section>
 
     <section id="featured-cars" class="featured-cars">
+        <div class="profile-container">
 
-        <h1>Active Orders</h1>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Order Id</th>
-                        <th>User Email</th>
-                        <th>Order Status</th>
-                        <th>Action Button</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <c:if test="${purchases != null}">
-                      <c:forEach items="${purchases}" var="purchase">
-                              <tr>
-                                <td>${purchase.getId()}</td>
-                                <td>${purchase.getCustomer().getEmail()}</td>
-                                <td>${purchase.getPurchaseStatus().getStatusName()}</td>
-                                <td><form action="management-fulfilment" method="post">
-                                  <input type="hidden" name="purchaseId" value="${purchase.getId()}">
-                                  <button type="submit">Mark Fulfilment Stage as Completed</button>
-                              </form></td>
-                              </tr>
-                      </c:forEach>
-                    </c:if>
-
-                    <c:if test="${purchases == null}">
-                        <tr>
-                            <td colspan="4">No active orders</td>
-                        </tr>
-                    </c:if>
-                </tbody>
-            </table>
-         </section>
+            <div class="profile-card">
+                <div class = "profile-image-edit">
+                    <div class="profile-image">
+                        <img src="https://via.placeholder.com/150" alt="Profile Picture">
+                    </div>
     
+                    <div class = "profile-edit">
+                        <h2>${loggedInUser.getFirstName()} ${loggedInUser.getLastName()}</h2>
+                        <button class="edit-button">Edit</button>
+                        <div class="tabs">
+                            <button class="tab active" onclick="showTab('personal-info')">Personal Info</button>
+                        </div>
+                        <div class="tabs">
+                            <button class="tab" onclick="showTab('referrals')">Referrals</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-info">
+                    <div id="personal-info" class="tab-content active">
+                        <p><strong>First Name:</strong> ${loggedInUser.getFirstName()}</p>
+                        <p><strong>Last Name:</strong> ${loggedInUser.getLastName()}</p>
+                        <p><strong>Email:</strong> ${loggedInUser.getEmail()}</p>
+                        <p><strong>Money:</strong> ${loggedInUser.getMoney()}</p>
+                        <p><strong>Role:</strong> ${loggedInUser.getRoleName()}</p>
+                        <p><strong>Partner Code:</strong> ${loggedInUser.getPartnerCode()}</p>
+                        <p><strong>Partner Link:</strong> <a href="http://localhost:8080/online-store.web-1.0?partner_code=${loggedInUser.getPartnerCode()}">http://localhost:8080/online-store.web-1.0?partner_code=${loggedInUser.getPartnerCode()}</a></p>
+                    </div>
+                    <div id="referrals" class="tab-content">
+                        <!-- Referrals content goes here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <shop:footer />
 
     <shop:indexjs />
 
-
-    <script src="/js/order.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

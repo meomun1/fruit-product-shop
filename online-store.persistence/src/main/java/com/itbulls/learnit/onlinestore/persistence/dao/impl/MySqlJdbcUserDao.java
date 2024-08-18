@@ -38,7 +38,7 @@ public class MySqlJdbcUserDao implements UserDao {
 			ps.setString(1, email);
 			try (var rs = ps.executeQuery()) {
 				if (rs.next()) {
-					return parseUserDtoFromResultSet(rs);
+					return parseUserDtoFromResultSet(rs); // get data from database call UserDto
 				}
 			}
 

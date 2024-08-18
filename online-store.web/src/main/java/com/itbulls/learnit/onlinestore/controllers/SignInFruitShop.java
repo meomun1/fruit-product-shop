@@ -26,7 +26,7 @@ public class SignInFruitShop extends HttpServlet {
 
 	public static final String LOGGED_IN_USER_ATTR = "loggedInUser";
 
-	private UserFacade userFacade = DefaultUserFacade.getInstance();
+	private UserFacade userFacade = DefaultUserFacade.getInstance(); // get instance to query user data
 
 	public static final String PARTNER_CODE_PARAMETER_NAME = "partner_code";
 
