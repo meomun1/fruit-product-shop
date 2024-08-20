@@ -41,6 +41,7 @@ public class ProductDtoToProductConverter {
 			product.setImgName(productDto.getImgName());
 			product.setDescription(productDto.getDescription());
 			product.setProductType(productDto.getProductType());
+			product.setGuid(productDto.getGuid());
 		}
 		
 		return product;
@@ -65,6 +66,7 @@ public class ProductDtoToProductConverter {
 		product.setProductType(productDto.getProductType());
 		product.setImgName(productDto.getImgName());
 		product.setDescription(productDto.getDescription());
+		productDto.setGuid(product.getGuid());
 		return productDto;
 	}
 

@@ -31,4 +31,8 @@ public interface Product extends Serializable {
 	String getImgName();
 
 	String getDescription();
+
+	void setGuid(String guid);
+
+	String getGuid();
 }

@@ -32,19 +32,16 @@ public class ProfileFruitShop extends HttpServlet {
         }
         else{
             String baseURL = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getServletContext().getContextPath();
-
+            
             String partnerLink = baseURL + "?" + PartnerCodeFilter.PARTNER_CODE_PARAMETER_NAME + "=" + loggedInUser.getPartnerCode();
 
             List<User> referrals = userFacade.getReferralsForUser(loggedInUser);
-
             loggedInUser = userFacade.getUserById(loggedInUser.getId());
 
             request.getSession().setAttribute(SignInFruitShop.LOGGED_IN_USER_ATTR, loggedInUser);
 
             request.setAttribute("partnerLink", partnerLink);
-
             request.setAttribute("referrals", referrals);
-
             request.getRequestDispatcher(Configurations.VIEWS_PATH_RESOLVER + "my-profile.jsp").forward(request, response);
         }
 

@@ -11,6 +11,7 @@ public class DefaultProduct implements Product {
 	private String productType;
 	private String imgName;
 	private String description;
+	private String guid;
 
 	public DefaultProduct() {
 	}
@@ -103,6 +104,16 @@ public class DefaultProduct implements Product {
 	public String getDescription() {
 		// TODO Auto-generated method stub
 		return this.description;
+	}
+
+	@Override
+	public void setGuid(String guid) {
+		this.guid = guid;
+	}
+
+	@Override
+	public String getGuid() {
+		return this.guid;
 	}
 
 }

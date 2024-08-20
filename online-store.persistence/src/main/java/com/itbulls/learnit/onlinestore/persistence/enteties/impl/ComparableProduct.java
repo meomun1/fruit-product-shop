@@ -11,6 +11,7 @@ public class ComparableProduct implements Product, Comparable<Product> {
 	private String productType;
 	private String imgName;
 	private String description;
+	private String guid;
 
 	public ComparableProduct() {
 	}
@@ -107,6 +108,16 @@ public class ComparableProduct implements Product, Comparable<Product> {
 	public String getDescription() {
 		// TODO Auto-generated method stub
 		throw new UnsupportedOperationException("Unimplemented method 'getDescription'");
+	}
+
+	@Override
+	public void setGuid(String guid) {
+		this.guid = guid;
+	}
+
+	@Override
+	public String getGuid() {
+		return this.guid;
 	}
 
 }
