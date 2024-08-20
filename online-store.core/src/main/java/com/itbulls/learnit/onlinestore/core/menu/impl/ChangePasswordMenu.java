@@ -1,6 +1,5 @@
 package com.itbulls.learnit.onlinestore.core.menu.impl;
 
-import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
@@ -25,6 +24,7 @@ public class ChangePasswordMenu implements Menu {
 		String userInput = sc.next();
 		context.getLoggedInUser().setPassword(userInput);
 		System.out.println(rb.getString("change.password.msg"));
+		sc.close();
 		new MainMenu().start();
 	}
 

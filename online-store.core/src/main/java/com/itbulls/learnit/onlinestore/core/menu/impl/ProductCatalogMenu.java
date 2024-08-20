@@ -2,7 +2,6 @@ package com.itbulls.learnit.onlinestore.core.menu.impl;
 
 
 import java.util.List;
-import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
@@ -73,6 +72,7 @@ public class ProductCatalogMenu implements Menu {
 		System.out.print(rb.getString("proceed.to.checkout"));
 		Scanner sc = new Scanner(System.in);
 		String userInput = sc.next();
+		sc.close();
 		return userInput;
 	}
 

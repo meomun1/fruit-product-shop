@@ -20,8 +20,6 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet("/cp-demo")
 public class ConnectionPoolDemoServlet extends HttpServlet {
 	
-	private DataSource ds1;
-	
 	@Resource(name = "jdbc/connpool")
     private DataSource ds2;
 	

@@ -29,7 +29,6 @@ public class DefaultUserFacade implements UserFacade{
 	
 	@Override
 	public void registerUser(User user, String referrerCode) {
-		// TODO Auto-generated method stub
 		user.setRoleName(CUSTOMER_ROLE_NAME);
 		user.setPartnerCode(marketingService.generateUniquePartnerCode());
 		user.setReferrerUser(userConverter.convertUserDtoToUser(userDao.getUserByPartnerCode(referrerCode)));
@@ -39,13 +38,11 @@ public class DefaultUserFacade implements UserFacade{
 
 	@Override
 	public User getUserByEmail(String email) {
-		// TODO Auto-generated method stub
 		return userConverter.convertUserDtoToUser(userDao.getUserByEmail(email)); // convert UserDto to User
 	}
 
 	@Override
 	public List<User> getUsers(){
-		// TODO Auto-generated method stub
 		return userConverter.convertUserDtosToUsers(userDao.getUsers());
 	}
 
@@ -56,13 +53,11 @@ public class DefaultUserFacade implements UserFacade{
 
 	@Override
 	public void updateUser(User user) {
-		// TODO Auto-generated method stub
 		userDao.updateUser(userConverter.convertUserToUserDto(user));
 	}
 
 	@Override
 	public List<User> getReferralsForUser(User loggedInUser) {
-		// TODO Auto-generated method stub
 		return userConverter.convertUserDtosToUsers(userDao.getReferralsByUserId(loggedInUser.getId()));
 	}
 }

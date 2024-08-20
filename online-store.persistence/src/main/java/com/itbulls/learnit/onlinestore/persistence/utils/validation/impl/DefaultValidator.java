@@ -9,7 +9,7 @@ public class DefaultValidator implements Validator {
 
 	@Override
 	public boolean isValid(Object obj) {
-		Class clazz = obj.getClass();
+		Class<?> clazz = obj.getClass();
 		for (Field field : clazz.getDeclaredFields()) {
 			Validate validateAnnotation = field.getAnnotation(Validate.class);
 			if(validateAnnotation != null) {

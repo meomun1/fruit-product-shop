@@ -1,12 +1,8 @@
 package com.itbulls.learnit.onlinestore.core.menu.impl;
 
-import java.util.List;
-import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 import java.util.concurrent.CompletableFuture;
-
-import com.itbulls.learnit.onlinestore.core.configs.ApplicationContext;
 import com.itbulls.learnit.onlinestore.core.menu.Menu;
 import com.itbulls.learnit.onlinestore.core.services.UserManagementService;
 import com.itbulls.learnit.onlinestore.core.services.impl.MySqlUserManagementService;
@@ -32,6 +28,7 @@ public class ResetPasswordMenu implements Menu {
 			User user = userManagementService.getUserByEmail(userInput);
 			userManagementService.resetPasswordForUser(user);
 		});
+		sc.close();
 		new MainMenu().start();
 	}
 

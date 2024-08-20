@@ -14,7 +14,6 @@ public class DefaultAffiliateMarketingService implements AffiliateMarketingServi
 
 	@Override
 	public String generateUniquePartnerCode() {
-		// TODO Auto-generated method stub
 		StringBuilder sb = new StringBuilder();
 		char[] charactersForPartnerCode = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 
 		                                   'H', 'I', 'J', 'K', 'L', 'M', 'N',

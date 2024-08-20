@@ -1,7 +1,5 @@
 package com.itbulls.learnit.onlinestore.core;
 
-import java.util.Locale;
-
 import com.itbulls.learnit.onlinestore.core.menu.Menu;
 import com.itbulls.learnit.onlinestore.core.menu.impl.MainMenu;
 

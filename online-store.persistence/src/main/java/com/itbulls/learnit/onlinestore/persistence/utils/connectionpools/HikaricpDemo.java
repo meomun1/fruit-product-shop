@@ -3,8 +3,6 @@ package com.itbulls.learnit.onlinestore.persistence.utils.connectionpools;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import org.apache.commons.dbcp2.BasicDataSource;
-
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 

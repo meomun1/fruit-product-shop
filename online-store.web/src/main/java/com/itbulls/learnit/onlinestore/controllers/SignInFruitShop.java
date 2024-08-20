@@ -3,17 +3,13 @@ package com.itbulls.learnit.onlinestore.controllers;
 import com.itbulls.learnit.onlinestore.Configurations;
 import com.itbulls.learnit.onlinestore.core.facades.UserFacade;
 import com.itbulls.learnit.onlinestore.core.facades.impl.DefaultUserFacade;
-import com.itbulls.learnit.onlinestore.filters.PartnerCodeFilter;
 import com.itbulls.learnit.onlinestore.persistence.enteties.User;
-
 import static com.itbulls.learnit.onlinestore.persistence.dto.RoleDto.*;
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 

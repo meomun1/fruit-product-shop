@@ -80,7 +80,6 @@ public class MySqlJdbcProductDao implements ProductDao {
 	public List<ProductDto> getProductsLikeName(String searchQuery) {
 
 		String lowercaseString = searchQuery.toLowerCase();
-		// TODO Auto-generated method stub
 		try (var conn = DBUtils.getConnection();
 				var ps = conn.prepareStatement("SELECT * FROM product WHERE product_type LIKE ?")) {
 			ps.setString(1, "%" + lowercaseString + "%");
@@ -100,7 +99,6 @@ public class MySqlJdbcProductDao implements ProductDao {
 
 	@Override
 	public List<ProductDto> getProductsByCategoryId(Integer categoryId) {
-		// TODO Auto-generated method stub
 		try (var conn = DBUtils.getConnection();
 				var ps = conn.prepareStatement("SELECT * FROM product WHERE category_id = ?")) {
 
@@ -145,7 +143,6 @@ public class MySqlJdbcProductDao implements ProductDao {
 
 	@Override
 	public Integer getProductCountForCategory(Integer categoryId) {
-		// TODO Auto-generated method stub
 		try (var conn = DBUtils.getConnection();
 				var ps = conn.prepareStatement("SELECT COUNT(*) FROM product WHERE category_id = ?")) {
 			ps.setInt(1,categoryId);
@@ -162,7 +159,6 @@ public class MySqlJdbcProductDao implements ProductDao {
 
 	@Override
 	public Integer getProductCountForSearch(String searchQuery) {
-		// TODO Auto-generated method stub
 		String lowercaseString = searchQuery.toLowerCase();
 
 		try (var conn = DBUtils.getConnection();
@@ -182,7 +178,6 @@ public class MySqlJdbcProductDao implements ProductDao {
 	@Override
 	public List<ProductDto> getProductsLikeNameForPageWithLimit(String searchQuery, Integer page,
 			Integer paginationLimit) {
-		// TODO Auto-generated method stub
 		try (var conn = DBUtils.getConnection();
 				var ps = conn.prepareStatement("SELECT * FROM product WHERE product_type LIKE ? LIMIT ? OFFSET ?")) {
 

@@ -33,6 +33,7 @@ public class ChangeLanguageMenu implements Menu {
 		}
 		
 		new MainMenu().start();
+		sc.close();
 	}
 
 	@Override

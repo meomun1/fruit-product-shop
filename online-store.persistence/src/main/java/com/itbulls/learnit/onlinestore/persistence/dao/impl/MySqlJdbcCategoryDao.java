@@ -34,7 +34,6 @@ public class MySqlJdbcCategoryDao implements CategoryDao {
 
 	@Override
 	public List<CategoryDto> getCategories() {
-		// TODO Auto-generated method stub
 		try (var conn = DBUtils.getConnection();
 				var ps = conn.prepareStatement("SELECT * FROM category"); 
 				var rs = ps.executeQuery()) {

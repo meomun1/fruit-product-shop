@@ -9,7 +9,6 @@ public class DefaultPurchaseStatus implements PurchaseStatus{
 
     @Override
     public void setId(Integer id) {
-        // TODO Auto-generated method stub
         this.id = id;
     }
 

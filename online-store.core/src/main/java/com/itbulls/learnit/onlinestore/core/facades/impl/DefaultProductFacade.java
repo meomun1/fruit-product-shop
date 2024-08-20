@@ -57,21 +57,18 @@ public class DefaultProductFacade implements ProductFacade {
     @Override
     public List<Product> getProductsLikeNameForPageWithLimit(String searchQuery, Integer page,
             Integer paginationLimit) {
-        // TODO Auto-generated method stub
         return productConverter.convertProductDtosToProducts(
                 productDao.getProductsLikeNameForPageWithLimit(searchQuery, page, paginationLimit));
     }
 
     @Override
     public Product getProductById(Integer parameter) {
-        // TODO Auto-generated method stub
         return productConverter.convertProductDtoToProduct(productDao.getProductById(parameter));
     }
 
     @Override
     public Product getProductByGuid(String guid) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getProductByGuid'");
+        return productConverter.convertProductDtoToProduct(productDao.getProductByGuid(guid));
     }
 
 }

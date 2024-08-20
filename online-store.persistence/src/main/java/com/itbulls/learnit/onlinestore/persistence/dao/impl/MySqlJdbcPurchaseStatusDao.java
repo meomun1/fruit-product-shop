@@ -10,7 +10,6 @@ public class MySqlJdbcPurchaseStatusDao implements PurchaseStatusDao{
 
     @Override
     public PurchaseStatusDto getPurchaseStatusById(Integer id) {
-        // TODO Auto-generated method stub
         try( Connection conn = DBUtils.getConnection();
             var ps = conn.prepareStatement("SELECT * FROM purchase_status WHERE id = ?")){
 

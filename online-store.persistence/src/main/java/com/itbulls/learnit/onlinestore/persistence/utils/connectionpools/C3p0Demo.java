@@ -3,9 +3,6 @@ package com.itbulls.learnit.onlinestore.persistence.utils.connectionpools;
 import java.beans.PropertyVetoException;
 import java.sql.Connection;
 import java.sql.SQLException;
-
-import org.apache.commons.dbcp2.BasicDataSource;
-
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 public class C3p0Demo {

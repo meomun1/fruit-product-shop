@@ -1,16 +1,20 @@
 package com.itbulls.learnit.onlinestore.persistence.utils.db;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
+
 import java.sql.SQLException;
 
 import com.itbulls.learnit.onlinestore.persistence.utils.connectionpools.DbcpDemo;
 
 public class DBUtils {
 	
+	@SuppressWarnings("unused")
 	private static final String JDBC_MYSQL_HOST = "jdbc:mysql://localhost:3306/";
+	@SuppressWarnings("unused")
 	private static final String DB_NAME = "final_task";
+	@SuppressWarnings("unused")
 	private static final String USERNAME = "root";
+	@SuppressWarnings("unused")
 	private static final String PASSWORD = "MaL1504@";
 	
 	private DBUtils() {

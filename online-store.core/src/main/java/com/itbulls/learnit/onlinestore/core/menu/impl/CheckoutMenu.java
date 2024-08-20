@@ -1,6 +1,4 @@
 package com.itbulls.learnit.onlinestore.core.menu.impl;
-
-import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
@@ -34,6 +32,7 @@ public class CheckoutMenu implements Menu {
 				continue;
 			}
 			context.getSessionCart().clear();
+			sc.close();
 			break;
 		}
 		

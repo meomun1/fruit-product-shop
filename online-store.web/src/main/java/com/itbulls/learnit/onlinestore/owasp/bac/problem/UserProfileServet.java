@@ -9,8 +9,6 @@ import com.itbulls.learnit.onlinestore.core.facades.UserFacade;
 import com.itbulls.learnit.onlinestore.core.facades.impl.DefaultUserFacade;
 import com.itbulls.learnit.onlinestore.filters.PartnerCodeFilter;
 import com.itbulls.learnit.onlinestore.persistence.enteties.User;
-import com.itbulls.learnit.onlinestore.persistence.enteties.impl.DefaultUser;
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;

@@ -1,14 +1,8 @@
 package com.itbulls.learnit.onlinestore.controllers;
 
 import com.itbulls.learnit.onlinestore.core.facades.impl.DefaultPurchaseFacade;
-import com.itbulls.learnit.onlinestore.persistence.enteties.Purchase;
-
 import java.io.IOException;
-import java.util.List;
-
-import com.itbulls.learnit.onlinestore.Configurations;
 import com.itbulls.learnit.onlinestore.core.facades.PurchaseFacade;
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;

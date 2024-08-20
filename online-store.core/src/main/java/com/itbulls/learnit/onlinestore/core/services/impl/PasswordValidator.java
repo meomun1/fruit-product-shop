@@ -8,7 +8,6 @@ public class PasswordValidator implements Validator {
 
     @Override
     public boolean isValidate(String password) {
-        // TODO Auto-generated method stub
         if( password.length() < 8){
             return false;
         }

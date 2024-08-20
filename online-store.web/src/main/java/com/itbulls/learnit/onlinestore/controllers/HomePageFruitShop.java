@@ -18,7 +18,7 @@ import com.itbulls.learnit.onlinestore.persistence.enteties.Category;
 
 public class HomePageFruitShop extends HttpServlet {
 
-	CategoryFacade categoryFacade = new DefaultCategoryFacade().getInstance();
+	CategoryFacade categoryFacade = DefaultCategoryFacade.getInstance();
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)

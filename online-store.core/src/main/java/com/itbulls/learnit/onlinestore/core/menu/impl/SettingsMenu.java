@@ -1,11 +1,7 @@
 package com.itbulls.learnit.onlinestore.core.menu.impl;
 
-import java.util.List;
-import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.Scanner;
-import java.util.concurrent.CompletableFuture;
-
 import com.itbulls.learnit.onlinestore.core.configs.ApplicationContext;
 import com.itbulls.learnit.onlinestore.core.menu.Menu;
 
@@ -34,6 +30,7 @@ public class SettingsMenu implements Menu {
 				System.out.print(rb.getString("enter.option"));
 				Scanner sc = new Scanner(System.in);
 				String userInput = sc.next();
+				sc.close();
 
 				if (userInput.equalsIgnoreCase(MainMenu.MENU_COMMAND)) {
 					menuToNavigate = new MainMenu();

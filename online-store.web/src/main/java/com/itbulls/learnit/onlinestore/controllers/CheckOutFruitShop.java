@@ -6,9 +6,7 @@ import com.itbulls.learnit.onlinestore.core.facades.ProductFacade;
 import com.itbulls.learnit.onlinestore.core.facades.PurchaseFacade;
 import com.itbulls.learnit.onlinestore.core.facades.impl.DefaultProductFacade;
 import com.itbulls.learnit.onlinestore.core.facades.impl.DefaultPurchaseFacade;
-import com.itbulls.learnit.onlinestore.persistence.enteties.Product;
 import com.itbulls.learnit.onlinestore.persistence.enteties.User;
-import com.itbulls.learnit.onlinestore.persistence.enteties.impl.DefaultPurchase;
 
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;

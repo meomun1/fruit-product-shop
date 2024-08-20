@@ -2,11 +2,7 @@ package com.itbulls.learnit.onlinestore.filters;
 
 import static com.itbulls.learnit.onlinestore.controllers.SignInFruitShop.*;
 import static com.itbulls.learnit.onlinestore.persistence.dto.RoleDto.*;
-
-
 import com.itbulls.learnit.onlinestore.persistence.enteties.User;
-
-import jakarta.servlet.Filter;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRequest;
@@ -22,13 +18,10 @@ import java.io.IOException;
  * Servlet Filter implementation class AdminFilter
  */
 @WebFilter("/admin/*")
-public class AdminFilter extends HttpFilter implements Filter {
+public class AdminFilter extends HttpFilter {
        
   
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		// TODO Auto-generated method stub
-		// place your code here
-		
 		User user = (User)((HttpServletRequest)request).getSession().getAttribute(LOGGED_IN_USER_ATTR);
 		System.out.println(user);
 		if (user != null) {

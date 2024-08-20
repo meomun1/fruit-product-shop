@@ -8,9 +8,6 @@ public class ComparableProduct implements Product, Comparable<Product> {
 	private String productName;
 	private String categoryName;
 	private double price;
-	private String productType;
-	private String imgName;
-	private String description;
 	private String guid;
 
 	public ComparableProduct() {
@@ -76,37 +73,31 @@ public class ComparableProduct implements Product, Comparable<Product> {
 
 	@Override
 	public String getProductType() {
-		// TODO Auto-generated method stub
 		throw new UnsupportedOperationException("Unimplemented method 'getProductType'");
 	}
 
 	@Override
 	public void setProductType(String productType) {
-		// TODO Auto-generated method stub
 		throw new UnsupportedOperationException("Unimplemented method 'setProductType'");
 	}
 
 	@Override
 	public void setImgName(String imgName) {
-		// TODO Auto-generated method stub
 		throw new UnsupportedOperationException("Unimplemented method 'setImgName'");
 	}
 
 	@Override
 	public void setDescription(String description) {
-		// TODO Auto-generated method stub
 		throw new UnsupportedOperationException("Unimplemented method 'setDescription'");
 	}
 
 	@Override
 	public String getImgName() {
-		// TODO Auto-generated method stub
 		throw new UnsupportedOperationException("Unimplemented method 'getImgName'");
 	}
 
 	@Override
 	public String getDescription() {
-		// TODO Auto-generated method stub
 		throw new UnsupportedOperationException("Unimplemented method 'getDescription'");
 	}
 

@@ -6,7 +6,6 @@ import static com.itbulls.learnit.onlinestore.persistence.dto.RoleDto.*;
 
 import com.itbulls.learnit.onlinestore.persistence.enteties.User;
 
-import jakarta.servlet.Filter;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRequest;
@@ -22,13 +21,9 @@ import java.io.IOException;
  * Servlet Filter implementation class AdminFilter
  */
 @WebFilter(servletNames = {"purchase", "fulfilment"})
-public class ManagementFilter extends HttpFilter implements Filter {
-       
-  
+public class ManagementFilter extends HttpFilter {
+    
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		// TODO Auto-generated method stub
-		// place your code here
-		
 		User user = (User)((HttpServletRequest)request).getSession().getAttribute(LOGGED_IN_USER_ATTR);
 		System.out.println(user);
 		if (user != null) {

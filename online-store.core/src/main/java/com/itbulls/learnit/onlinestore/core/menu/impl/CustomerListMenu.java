@@ -1,10 +1,7 @@
 package com.itbulls.learnit.onlinestore.core.menu.impl;
 
 import java.util.List;
-import java.util.Locale;
 import java.util.ResourceBundle;
-import java.util.Scanner;
-
 import com.itbulls.learnit.onlinestore.core.configs.ApplicationContext;
 import com.itbulls.learnit.onlinestore.core.menu.Menu;
 import com.itbulls.learnit.onlinestore.core.services.UserManagementService;
